@@ -1,0 +1,1197 @@
+/* =========================
+   BASIC SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background: #f8f4ff;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at top left,
+        rgba(255,255,255,0.15),
+        transparent 30%),
+
+        linear-gradient(
+        135deg,
+        #24145f,
+        #44227d,
+        #7b327d
+        );
+
+    color: white;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 70px 20px;
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+    max-width: 850px;
+
+    position: relative;
+
+    z-index: 2;
+
+    animation: heroEnter 1.5s ease;
+}
+
+@keyframes heroEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.hero-icon {
+
+    font-size: 60px;
+
+    animation: floatingBook 3s ease-in-out infinite;
+}
+
+@keyframes floatingBook {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+.small-title {
+
+    font-size: 15px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    opacity: 0.8;
+
+    margin-top: 20px;
+}
+
+
+.hero h1 {
+
+    font-size: clamp(50px, 10vw, 100px);
+
+    font-family: cursive;
+
+    line-height: 1;
+
+    margin: 20px 0;
+}
+
+
+.hero h1 span {
+
+    display: block;
+
+    color: #ffb6d9;
+
+    margin-top: 8px;
+}
+
+
+.heart-line {
+
+    font-size: 20px;
+
+    margin: 25px 0;
+
+    color: #ffd6e7;
+}
+
+
+.quote {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    font-size: clamp(18px, 4vw, 24px);
+
+    line-height: 1.7;
+
+    opacity: 0.95;
+}
+
+
+/* =========================
+   HERO DECORATION
+========================= */
+
+.hero-decoration {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    max-width: 650px;
+
+    margin: 30px auto;
+}
+
+.books {
+
+    font-size: 65px;
+
+    transform: rotate(-8deg);
+}
+
+.pencils {
+
+    font-size: 45px;
+
+    transform: rotate(8deg);
+}
+
+
+/* =========================
+   THANK BUTTON
+========================= */
+
+.thank-button {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 16px 35px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 17px;
+
+    background:
+        rgba(255,255,255,0.15);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.5);
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.2);
+}
+
+.thank-button:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    background:
+        rgba(255,255,255,0.25);
+}
+
+
+/* =========================
+   SCROLL DOWN
+========================= */
+
+.scroll-down {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-top: 45px;
+
+    color: white;
+
+    text-decoration: none;
+
+    opacity: 0.8;
+}
+
+.scroll-down span {
+
+    font-size: 45px;
+
+    animation: arrowMove 1.5s infinite;
+}
+
+.scroll-down small {
+
+    margin-top: -10px;
+}
+
+@keyframes arrowMove {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.stars span {
+
+    position: absolute;
+
+    font-size: 22px;
+
+    animation:
+        twinkle 3s infinite ease-in-out;
+}
+
+.stars span:nth-child(1) {
+    top: 15%;
+    left: 10%;
+}
+
+.stars span:nth-child(2) {
+    top: 25%;
+    right: 12%;
+}
+
+.stars span:nth-child(3) {
+    top: 65%;
+    left: 8%;
+}
+
+.stars span:nth-child(4) {
+    bottom: 15%;
+    right: 15%;
+}
+
+.stars span:nth-child(5) {
+    top: 10%;
+    left: 50%;
+}
+
+.stars span:nth-child(6) {
+    top: 50%;
+    right: 6%;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+
+/* =========================
+   FLAGS
+========================= */
+
+.flags {
+
+    position: absolute;
+
+    top: 0;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+}
+
+.flags span {
+
+    width: 35px;
+
+    height: 55px;
+
+    background: #ff8ab5;
+
+    clip-path:
+        polygon(
+        0 0,
+        100% 0,
+        50% 100%
+        );
+
+    animation:
+        flagMove 3s
+        ease-in-out
+        infinite;
+}
+
+.flags span:nth-child(2) {
+    background: #79d4d1;
+}
+
+.flags span:nth-child(3) {
+    background: #ffc46b;
+}
+
+.flags span:nth-child(4) {
+    background: #a986f7;
+}
+
+.flags span:nth-child(5) {
+    background: #ff91b4;
+}
+
+.flags span:nth-child(6) {
+    background: #70bfff;
+}
+
+@keyframes flagMove {
+
+    0%,
+    100% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(4deg);
+    }
+}
+
+
+/* =========================
+   SURPRISE SECTION
+========================= */
+
+.surprise-section {
+
+    min-height: 100vh;
+
+    padding:
+        80px 20px
+        100px;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(
+        circle at top,
+        #fff,
+        #f9ddea,
+        #f4e6ff
+        );
+
+    color: #48204f;
+}
+
+
+.section-heading {
+
+    margin-bottom: 100px;
+}
+
+.sparkle {
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+
+.section-heading h2 {
+
+    font-size:
+        clamp(32px, 7vw, 55px);
+
+    font-family: cursive;
+
+    margin-bottom: 15px;
+}
+
+
+.section-heading p {
+
+    font-size: 18px;
+
+    opacity: 0.8;
+}
+
+
+/* =========================
+   GIFT CONTAINER
+========================= */
+
+.gifts-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+
+    gap: 70px;
+
+    flex-wrap: wrap;
+
+    padding-bottom: 150px;
+}
+
+
+/* =========================
+   GIFT WRAPPER
+========================= */
+
+.gift-wrapper {
+
+    width: 220px;
+
+    min-height: 350px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    position: relative;
+}
+
+
+/* =========================
+   GIFT
+========================= */
+
+.gift {
+
+    width: 190px;
+
+    height: 190px;
+
+    position: relative;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease;
+
+    touch-action: manipulation;
+}
+
+.gift:active {
+
+    transform:
+        scale(0.96);
+}
+
+
+/* =========================
+   GIFT BOX
+========================= */
+
+.gift-box {
+
+    width: 190px;
+
+    height: 145px;
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    border-radius:
+        8px 8px 15px 15px;
+
+    overflow: hidden;
+
+    box-shadow:
+
+        inset -10px -10px
+        rgba(0,0,0,0.12),
+
+        0 15px 25px
+        rgba(0,0,0,0.2);
+
+    z-index: 4;
+}
+
+
+/* Gift colors */
+
+.gift1 .gift-box,
+.gift1 .gift-lid {
+
+    background:
+        linear-gradient(
+        135deg,
+        #ff7598,
+        #e83f72
+        );
+}
+
+.gift2 .gift-box,
+.gift2 .gift-lid {
+
+    background:
+        linear-gradient(
+        135deg,
+        #9b6be8,
+        #653bb2
+        );
+}
+
+.gift3 .gift-box,
+.gift3 .gift-lid {
+
+    background:
+        linear-gradient(
+        135deg,
+        #4dbdb9,
+        #218c91
+        );
+}
+
+
+/* =========================
+   GIFT LID
+========================= */
+
+.gift-lid {
+
+    width: 205px;
+
+    height: 55px;
+
+    position: absolute;
+
+    top: 0;
+
+    left: -7px;
+
+    border-radius:
+        10px 10px 6px 6px;
+
+    z-index: 6;
+
+    box-shadow:
+        0 8px 15px
+        rgba(0,0,0,0.18);
+
+    transform-origin:
+        center bottom;
+
+    transition:
+        transform
+        0.9s
+        cubic-bezier(
+        .68,-0.55,
+        .27,1.55
+        );
+}
+
+
+/* =========================
+   RIBBONS
+========================= */
+
+.vertical-ribbon {
+
+    width: 30px;
+
+    height: 100%;
+
+    background:
+        rgba(255,255,255,0.8);
+
+    position: absolute;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    box-shadow:
+        2px 0 5px
+        rgba(0,0,0,0.1);
+}
+
+
+.lid-ribbon {
+
+    width: 30px;
+
+    height: 100%;
+
+    background:
+        rgba(255,255,255,0.8);
+
+    position: absolute;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+}
+
+
+.bow {
+
+    position: absolute;
+
+    top: -42px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    font-size: 55px;
+
+    filter:
+        drop-shadow(
+        0 5px 5px
+        rgba(0,0,0,0.2)
+        );
+}
+
+
+/* =========================
+   GIFT NUMBER
+========================= */
+
+.gift-number {
+
+    position: absolute;
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #5a3567;
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    box-shadow:
+        0 8px 15px
+        rgba(0,0,0,0.15);
+
+    z-index: 2;
+}
+
+
+/* =========================
+   WISH CARD
+========================= */
+
+.wish-card {
+
+    width: 210px;
+
+    min-height: 230px;
+
+    background:
+        linear-gradient(
+        135deg,
+        #fffdf8,
+        #fff4df
+        );
+
+    color: #512f5d;
+
+    position: absolute;
+
+    left: -10px;
+
+    bottom: 45px;
+
+    padding: 22px 18px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 15px 30px
+        rgba(0,0,0,0.25);
+
+    z-index: 2;
+
+    opacity: 0;
+
+    transform:
+        translateY(80px)
+        scale(0.75);
+
+    transition:
+
+        transform
+        1s
+        cubic-bezier(
+        .22,1,
+        .36,1
+        ),
+
+        opacity
+        0.5s ease;
+
+    pointer-events: none;
+}
+
+
+.wish-card h3 {
+
+    font-family: cursive;
+
+    font-size: 26px;
+
+    margin-bottom: 8px;
+
+    color: #b33f6d;
+}
+
+
+.card-heart {
+
+    font-size: 25px;
+
+    margin-bottom: 5px;
+}
+
+
+.card-line {
+
+    width: 80px;
+
+    height: 2px;
+
+    background: #e6a0b7;
+
+    margin:
+        10px auto
+        15px;
+}
+
+
+.wish-card p {
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 12px;
+}
+
+
+.card-bottom {
+
+    font-size: 13px;
+
+    color: #b33f6d;
+
+    font-weight: bold;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   OPEN GIFT ANIMATION
+========================= */
+
+.gift.open .gift-lid {
+
+    transform:
+
+        translateY(-75px)
+
+        rotate(-15deg)
+
+        scale(1.05);
+}
+
+
+.gift.open .wish-card {
+
+    opacity: 1;
+
+    transform:
+
+        translateY(-170px)
+
+        scale(1);
+}
+
+
+.gift.open {
+
+    animation:
+        giftCelebrate
+        0.7s ease;
+}
+
+
+@keyframes giftCelebrate {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.08);
+
+    }
+}
+
+
+/* =========================
+   GIFT LABEL
+========================= */
+
+.gift-label {
+
+    margin-top: 25px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    color: #6a3a6c;
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final-message {
+
+    max-width: 750px;
+
+    margin: auto;
+
+    padding: 50px 25px;
+
+    border-radius: 30px;
+
+    background:
+
+        linear-gradient(
+        135deg,
+        #6b3b8d,
+        #b14b83
+        );
+
+    color: white;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,0.18);
+}
+
+
+.final-stars {
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+
+.final-message h2 {
+
+    font-size:
+        clamp(30px,6vw,50px);
+
+    font-family: cursive;
+
+    margin-bottom: 20px;
+}
+
+
+.final-message p {
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+.signature {
+
+    margin-top: 25px;
+
+    font-size: 20px;
+
+    font-family: cursive;
+
+    color: #ffd6e7;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 25px;
+
+    background: #24145f;
+
+    color: white;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti {
+
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 100;
+
+    animation:
+        confettiFall
+        2s ease-out forwards;
+}
+
+
+@keyframes confettiFall {
+
+    0% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(1);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translateY(150px)
+            rotate(360deg)
+            scale(0.3);
+
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+
+        min-height: 100vh;
+
+        padding:
+            80px 15px
+            50px;
+    }
+
+
+    .hero-icon {
+
+        font-size: 50px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 55px;
+    }
+
+
+    .quote {
+
+        font-size: 18px;
+
+        padding:
+            0 10px;
+    }
+
+
+    .books {
+
+        font-size: 50px;
+    }
+
+
+    .pencils {
+
+        font-size: 35px;
+    }
+
+
+    .thank-button {
+
+        padding:
+            14px 22px;
+
+        font-size: 15px;
+    }
+
+
+    .surprise-section {
+
+        padding:
+            70px 15px;
+    }
+
+
+    .section-heading {
+
+        margin-bottom: 70px;
+    }
+
+
+    .gifts-container {
+
+        gap: 130px;
+
+        padding-bottom: 100px;
+    }
+
+
+    .gift-wrapper {
+
+        min-height: 330px;
+    }
+
+
+    .final-message {
+
+        padding:
+            40px 20px;
+    }
+
+
+    .stars span {
+
+        font-size: 16px;
+    }
+
+}
+
+
+/* =========================
+   REDUCE MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+
+}
