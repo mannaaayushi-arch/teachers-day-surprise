@@ -1,6 +1,6 @@
-/* =========================
-   BASIC SETTINGS
-========================= */
+/* =====================================================
+   GENERAL
+===================================================== */
 
 * {
     margin: 0;
@@ -13,1185 +13,963 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: #fff5fa;
+    color: #5b3045;
     overflow-x: hidden;
-    background: #f8f4ff;
 }
 
 
-/* =========================
+/* =====================================================
    HERO SECTION
-========================= */
+===================================================== */
 
 .hero {
     min-height: 100vh;
-
-    background:
-        radial-gradient(circle at top left,
-        rgba(255,255,255,0.15),
-        transparent 30%),
-
-        linear-gradient(
-        135deg,
-        #24145f,
-        #44227d,
-        #7b327d
-        );
-
-    color: white;
-
     position: relative;
-
     overflow: hidden;
 
     display: flex;
-
-    justify-content: center;
-
     align-items: center;
+    justify-content: center;
 
     text-align: center;
 
-    padding: 70px 20px;
+    background:
+        radial-gradient(circle at 20% 20%, #ffd9e9 0, transparent 25%),
+        radial-gradient(circle at 80% 70%, #eadcff 0, transparent 28%),
+        linear-gradient(135deg, #fff1f7, #f7ecff);
 }
-
-
-/* =========================
-   HERO CONTENT
-========================= */
 
 .hero-content {
-    max-width: 850px;
-
     position: relative;
-
-    z-index: 2;
-
-    animation: heroEnter 1.5s ease;
+    z-index: 3;
+    width: 92%;
+    max-width: 700px;
+    padding: 40px 20px;
 }
-
-@keyframes heroEnter {
-
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 
 .hero-icon {
+    font-size: 65px;
+    margin-bottom: 15px;
 
-    font-size: 60px;
-
-    animation: floatingBook 3s ease-in-out infinite;
+    animation: floatIcon 3s ease-in-out infinite;
 }
-
-@keyframes floatingBook {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
-}
-
 
 .small-title {
-
-    font-size: 15px;
-
-    letter-spacing: 4px;
-
-    text-transform: uppercase;
-
-    opacity: 0.8;
-
-    margin-top: 20px;
+    font-size: 17px;
+    letter-spacing: 2px;
+    color: #a64d72;
+    margin-bottom: 15px;
 }
-
 
 .hero h1 {
-
-    font-size: clamp(50px, 10vw, 100px);
-
-    font-family: cursive;
-
-    line-height: 1;
-
-    margin: 20px 0;
+    font-family: Georgia, serif;
+    font-size: clamp(45px, 10vw, 82px);
+    line-height: 1.05;
+    color: #6b3150;
 }
-
 
 .hero h1 span {
-
     display: block;
-
-    color: #ffb6d9;
-
-    margin-top: 8px;
+    color: #c94778;
 }
-
 
 .heart-line {
-
-    font-size: 20px;
-
     margin: 25px 0;
-
-    color: #ffd6e7;
+    font-size: 18px;
+    color: #d95b87;
 }
-
 
 .quote {
-
-    max-width: 600px;
-
+    max-width: 550px;
     margin: auto;
 
-    font-size: clamp(18px, 4vw, 24px);
-
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 19px;
     line-height: 1.7;
 
-    opacity: 0.95;
+    color: #75445b;
 }
-
-
-/* =========================
-   HERO DECORATION
-========================= */
 
 .hero-decoration {
+    margin: 30px 0;
 
     display: flex;
+    justify-content: center;
+    gap: 30px;
 
-    justify-content: space-between;
-
-    align-items: center;
-
-    max-width: 650px;
-
-    margin: 30px auto;
+    font-size: 42px;
 }
 
-.books {
-
-    font-size: 65px;
-
-    transform: rotate(-8deg);
+.books,
+.pencils {
+    animation: floatIcon 3.5s ease-in-out infinite;
 }
 
 .pencils {
-
-    font-size: 45px;
-
-    transform: rotate(8deg);
+    animation-delay: .7s;
 }
 
-
-/* =========================
-   THANK BUTTON
-========================= */
-
 .thank-button {
-
     display: inline-block;
 
-    margin-top: 20px;
+    padding: 15px 28px;
 
-    padding: 16px 35px;
+    border-radius: 40px;
 
-    border-radius: 50px;
-
-    text-decoration: none;
-
+    background: linear-gradient(135deg, #e95d91, #c84d91);
     color: white;
 
+    text-decoration: none;
+    font-weight: bold;
     font-size: 17px;
 
-    background:
-        rgba(255,255,255,0.15);
+    box-shadow: 0 10px 25px rgba(190, 70, 120, .25);
 
-    border:
-        1px solid
-        rgba(255,255,255,0.5);
-
-    transition: 0.3s;
-
-    box-shadow:
-        0 10px 30px
-        rgba(0,0,0,0.2);
+    transition: .3s;
 }
 
 .thank-button:hover {
-
-    transform:
-        translateY(-4px)
-        scale(1.03);
-
-    background:
-        rgba(255,255,255,0.25);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(190, 70, 120, .35);
 }
 
-
-/* =========================
-   SCROLL DOWN
-========================= */
-
 .scroll-down {
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    margin-top: 45px;
-
-    color: white;
+    display: block;
+    margin-top: 30px;
 
     text-decoration: none;
-
-    opacity: 0.8;
+    color: #9a5875;
 }
 
 .scroll-down span {
+    display: block;
+    font-size: 35px;
 
-    font-size: 45px;
-
-    animation: arrowMove 1.5s infinite;
+    animation: bounce 1.5s infinite;
 }
 
 .scroll-down small {
-
-    margin-top: -10px;
-}
-
-@keyframes arrowMove {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(10px);
-    }
+    font-size: 13px;
 }
 
 
-/* =========================
-   STARS
-========================= */
+/* =====================================================
+   FLOATING DECORATIONS
+===================================================== */
 
-.stars span {
-
+.floating-decor span {
     position: absolute;
+    z-index: 1;
 
     font-size: 22px;
 
-    animation:
-        twinkle 3s infinite ease-in-out;
+    animation: floating 6s ease-in-out infinite;
 }
 
-.stars span:nth-child(1) {
-    top: 15%;
-    left: 10%;
-}
-
-.stars span:nth-child(2) {
-    top: 25%;
-    right: 12%;
-}
-
-.stars span:nth-child(3) {
-    top: 65%;
+.floating-decor span:nth-child(1) {
+    top: 10%;
     left: 8%;
 }
 
-.stars span:nth-child(4) {
-    bottom: 15%;
-    right: 15%;
+.floating-decor span:nth-child(2) {
+    top: 20%;
+    right: 10%;
 }
 
-.stars span:nth-child(5) {
-    top: 10%;
-    left: 50%;
-}
-
-.stars span:nth-child(6) {
+.floating-decor span:nth-child(3) {
     top: 50%;
-    right: 6%;
+    left: 5%;
 }
 
-@keyframes twinkle {
+.floating-decor span:nth-child(4) {
+    top: 65%;
+    right: 7%;
+}
 
-    0%,
-    100% {
-        opacity: 0.3;
-        transform: scale(0.8);
-    }
+.floating-decor span:nth-child(5) {
+    bottom: 15%;
+    left: 15%;
+}
 
-    50% {
-        opacity: 1;
-        transform: scale(1.3);
-    }
+.floating-decor span:nth-child(6) {
+    bottom: 10%;
+    right: 20%;
+}
+
+.floating-decor span:nth-child(7) {
+    top: 35%;
+    right: 25%;
+}
+
+.floating-decor span:nth-child(8) {
+    top: 75%;
+    left: 30%;
 }
 
 
-/* =========================
+/* =====================================================
    FLAGS
-========================= */
+===================================================== */
 
 .flags {
-
     position: absolute;
-
-    top: 0;
+    top: 15px;
+    left: 0;
 
     width: 100%;
 
     display: flex;
-
-    justify-content: center;
-
-    gap: 8px;
+    justify-content: space-around;
 }
 
 .flags span {
-
-    width: 35px;
-
+    width: 45px;
     height: 55px;
 
-    background: #ff8ab5;
+    background: #f5a8c5;
 
-    clip-path:
-        polygon(
+    clip-path: polygon(
         0 0,
         100% 0,
-        50% 100%
-        );
+        100% 75%,
+        50% 100%,
+        0 75%
+    );
 
-    animation:
-        flagMove 3s
-        ease-in-out
-        infinite;
-}
-
-.flags span:nth-child(2) {
-    background: #79d4d1;
-}
-
-.flags span:nth-child(3) {
-    background: #ffc46b;
-}
-
-.flags span:nth-child(4) {
-    background: #a986f7;
-}
-
-.flags span:nth-child(5) {
-    background: #ff91b4;
-}
-
-.flags span:nth-child(6) {
-    background: #70bfff;
-}
-
-@keyframes flagMove {
-
-    0%,
-    100% {
-        transform: rotate(0);
-    }
-
-    50% {
-        transform: rotate(4deg);
-    }
+    opacity: .45;
 }
 
 
-/* =========================
+/* =====================================================
    SURPRISE SECTION
-========================= */
+===================================================== */
 
 .surprise-section {
-
-    min-height: 100vh;
-
-    padding:
-        80px 20px
-        100px;
-
-    text-align: center;
+    padding: 80px 15px 100px;
 
     background:
-
-        radial-gradient(
-        circle at top,
-        #fff,
-        #f9ddea,
-        #f4e6ff
-        );
-
-    color: #48204f;
+        radial-gradient(circle at 10% 10%, #ffe0ed, transparent 25%),
+        radial-gradient(circle at 90% 80%, #eadcff, transparent 25%),
+        #fff8fc;
 }
 
-
 .section-heading {
-
-    margin-bottom: 100px;
+    text-align: center;
+    max-width: 700px;
+    margin: auto auto 60px;
 }
 
 .sparkle {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 7vw, 50px);
+    color: #71364f;
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    font-size: 17px;
+    color: #86566c;
+}
+
+
+/* =====================================================
+   GIFTS CONTAINER
+===================================================== */
+
+.gifts-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 70px 35px;
+
+    justify-items: center;
+}
+
+
+/* =====================================================
+   GIFT WRAPPER
+===================================================== */
+
+.gift-wrapper {
+    width: 100%;
+    max-width: 280px;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   GIFT
+===================================================== */
+
+.gift {
+    position: relative;
+
+    width: 220px;
+    height: 190px;
+
+    margin: auto;
+
+    cursor: pointer;
+
+    perspective: 1000px;
+
+    transition: transform .3s ease;
+}
+
+.gift:hover {
+    transform: translateY(-8px);
+}
+
+.gift:focus {
+    outline: 3px solid #e76b9b;
+    outline-offset: 6px;
+}
+
+
+/* =====================================================
+   GIFT BOX
+===================================================== */
+
+.gift-box {
+    position: absolute;
+
+    left: 10px;
+    bottom: 0;
+
+    width: 200px;
+    height: 125px;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        135deg,
+        #e96592,
+        #c84679
+    );
+
+    box-shadow:
+        0 15px 25px rgba(150, 50, 90, .25);
+
+    z-index: 2;
+
+    overflow: hidden;
+}
+
+.vertical-ribbon {
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    transform: translateX(-50%);
+
+    width: 38px;
+    height: 100%;
+
+    background: #ffd37e;
+}
+
+.gift-number {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .9);
+
+    color: #bd3d6e;
 
     font-size: 22px;
+    font-weight: bold;
+
+    z-index: 3;
+}
+
+
+/* =====================================================
+   GIFT LID
+===================================================== */
+
+.gift-lid {
+    position: absolute;
+
+    left: 0;
+    top: 45px;
+
+    width: 220px;
+    height: 45px;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        135deg,
+        #f478a2,
+        #d54b7d
+    );
+
+    z-index: 5;
+
+    transform-origin: left bottom;
+
+    transition:
+        transform 1s cubic-bezier(.2,.8,.2,1),
+        top 1s ease;
+}
+
+.lid-ribbon {
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    transform: translateX(-50%);
+
+    width: 38px;
+    height: 100%;
+
+    background: #ffd37e;
+}
+
+
+/* =====================================================
+   BOW
+===================================================== */
+
+.bow {
+    position: absolute;
+
+    top: -35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 48px;
+
+    z-index: 10;
+
+    transition: transform .8s ease;
+}
+
+
+/* =====================================================
+   OPEN GIFT
+===================================================== */
+
+.gift.open .gift-lid {
+    transform:
+        rotate(-18deg)
+        translate(-5px, -70px);
+}
+
+.gift.open .bow {
+    transform:
+        translateX(-50%)
+        rotate(-12deg)
+        scale(1.1);
+}
+
+.gift.open .gift-box {
+    animation: boxGlow 1s ease;
+}
+
+
+/* =====================================================
+   WISH CARD
+===================================================== */
+
+.wish-card {
+    position: absolute;
+
+    left: 50%;
+    bottom: 55px;
+
+    transform:
+        translateX(-50%)
+        translateY(100px)
+        scale(.75);
+
+    width: 260px;
+
+    max-height: 430px;
+
+    padding: 18px;
+
+    overflow-y: auto;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdfd,
+            #fff0f6
+        );
+
+    border: 2px solid #f4bfd3;
+
+    box-shadow:
+        0 15px 40px rgba(140, 50, 90, .25);
+
+    opacity: 0;
+
+    z-index: 4;
+
+    pointer-events: none;
+
+    transition:
+        opacity .7s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
+}
+
+.gift.open .wish-card {
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(-15px)
+        scale(1);
+
+    z-index: 8;
+
+    pointer-events: auto;
+}
+
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.card-heart {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.wish-card h3 {
+    font-family: Georgia, serif;
+
+    font-size: 21px;
+
+    color: #a33e67;
 
     margin-bottom: 10px;
 }
 
+.card-line {
+    width: 55px;
+    height: 3px;
 
-.section-heading h2 {
+    margin: 0 auto 14px;
 
-    font-size:
-        clamp(32px, 7vw, 55px);
+    border-radius: 5px;
 
-    font-family: cursive;
+    background: #e77ba3;
+}
 
-    margin-bottom: 15px;
+.wish-card p {
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    color: #704659;
+
+    margin-bottom: 12px;
+
+    text-align: left;
+}
+
+.card-bottom {
+    margin-top: 15px;
+    padding-top: 12px;
+
+    border-top: 1px dashed #e4a9c0;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    color: #a33e67;
 }
 
 
-.section-heading p {
+/* =====================================================
+   FRIEND PHOTOS
+===================================================== */
 
-    font-size: 18px;
+.friend-photo {
+    width: 100%;
+    height: 145px;
 
-    opacity: 0.8;
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    margin-bottom: 12px;
+
+    border: 3px solid white;
+
+    box-shadow:
+        0 5px 15px rgba(120, 50, 80, .2);
 }
 
 
-/* =========================
-   GIFT CONTAINER
-========================= */
+/* =====================================================
+   PHOTO PLACEHOLDER
+===================================================== */
 
-.gifts-container {
+.photo-placeholder {
+    width: 100%;
+    height: 145px;
 
     display: flex;
-
-    justify-content: center;
-
-    align-items: flex-end;
-
-    gap: 70px;
-
-    flex-wrap: wrap;
-
-    padding-bottom: 150px;
-}
-
-
-/* =========================
-   GIFT WRAPPER
-========================= */
-
-.gift-wrapper {
-
-    width: 220px;
-
-    min-height: 350px;
-
-    display: flex;
-
     flex-direction: column;
 
     align-items: center;
+    justify-content: center;
 
-    justify-content: flex-end;
+    border-radius: 12px;
 
-    position: relative;
+    margin-bottom: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe2ed,
+            #f1ddff
+        );
+
+    color: #9a5775;
+
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.photo-placeholder:first-line {
+    font-size: 30px;
+}
+
+.photo-placeholder small {
+    margin-top: 6px;
+
+    font-size: 12px;
+
+    font-weight: normal;
 }
 
 
-/* =========================
-   GIFT
-========================= */
+/* =====================================================
+   MILI BOX
+===================================================== */
 
-.gift {
+.mili-box .gift-box {
+    background:
+        linear-gradient(
+            135deg,
+            #b979c9,
+            #8e57a9
+        );
+}
 
+.mili-box .gift-lid {
+    background:
+        linear-gradient(
+            135deg,
+            #ca8add,
+            #9d62b8
+        );
+}
+
+.mili-icon {
+    font-size: 42px;
+    margin-bottom: 8px;
+
+    animation: heartBeat 1.5s infinite;
+}
+
+
+/* =====================================================
+   GIFT LABEL
+===================================================== */
+
+.gift-label {
+    margin-top: 20px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    color: #8d4865;
+}
+
+
+/* =====================================================
+   FINAL MESSAGE
+===================================================== */
+
+.final-message {
+    max-width: 700px;
+
+    margin: 90px auto 0;
+
+    padding: 45px 25px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, .75);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 40px rgba(150, 70, 110, .12);
+}
+
+.final-stars {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.teacher-photo {
     width: 190px;
-
     height: 190px;
 
-    position: relative;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.3s ease;
-
-    touch-action: manipulation;
-}
-
-.gift:active {
-
-    transform:
-        scale(0.96);
-}
-
-
-/* =========================
-   GIFT BOX
-========================= */
-
-.gift-box {
-
-    width: 190px;
-
-    height: 145px;
-
-    position: absolute;
-
-    bottom: 0;
-
-    left: 0;
-
-    border-radius:
-        8px 8px 15px 15px;
-
-    overflow: hidden;
-
-    box-shadow:
-
-        inset -10px -10px
-        rgba(0,0,0,0.12),
-
-        0 15px 25px
-        rgba(0,0,0,0.2);
-
-    z-index: 4;
-}
-
-
-/* Gift colors */
-
-.gift1 .gift-box,
-.gift1 .gift-lid {
-
-    background:
-        linear-gradient(
-        135deg,
-        #ff7598,
-        #e83f72
-        );
-}
-
-.gift2 .gift-box,
-.gift2 .gift-lid {
-
-    background:
-        linear-gradient(
-        135deg,
-        #9b6be8,
-        #653bb2
-        );
-}
-
-.gift3 .gift-box,
-.gift3 .gift-lid {
-
-    background:
-        linear-gradient(
-        135deg,
-        #4dbdb9,
-        #218c91
-        );
-}
-
-
-/* =========================
-   GIFT LID
-========================= */
-
-.gift-lid {
-
-    width: 205px;
-
-    height: 55px;
-
-    position: absolute;
-
-    top: 0;
-
-    left: -7px;
-
-    border-radius:
-        10px 10px 6px 6px;
-
-    z-index: 6;
-
-    box-shadow:
-        0 8px 15px
-        rgba(0,0,0,0.18);
-
-    transform-origin:
-        center bottom;
-
-    transition:
-        transform
-        0.9s
-        cubic-bezier(
-        .68,-0.55,
-        .27,1.55
-        );
-}
-
-
-/* =========================
-   RIBBONS
-========================= */
-
-.vertical-ribbon {
-
-    width: 30px;
-
-    height: 100%;
-
-    background:
-        rgba(255,255,255,0.8);
-
-    position: absolute;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-
-    box-shadow:
-        2px 0 5px
-        rgba(0,0,0,0.1);
-}
-
-
-.lid-ribbon {
-
-    width: 30px;
-
-    height: 100%;
-
-    background:
-        rgba(255,255,255,0.8);
-
-    position: absolute;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-}
-
-
-.bow {
-
-    position: absolute;
-
-    top: -42px;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-
-    font-size: 55px;
-
-    filter:
-        drop-shadow(
-        0 5px 5px
-        rgba(0,0,0,0.2)
-        );
-}
-
-
-/* =========================
-   GIFT NUMBER
-========================= */
-
-.gift-number {
-
-    position: absolute;
-
-    width: 65px;
-
-    height: 65px;
+    object-fit: cover;
 
     border-radius: 50%;
 
-    background: white;
+    border: 6px solid white;
 
-    color: #5a3567;
+    box-shadow:
+        0 10px 30px rgba(150, 60, 100, .25);
+
+    margin-bottom: 25px;
+}
+
+.final-message h2 {
+    font-family: Georgia, serif;
 
     font-size: 32px;
 
-    font-weight: bold;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    left: 50%;
-
-    top: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    box-shadow:
-        0 8px 15px
-        rgba(0,0,0,0.15);
-
-    z-index: 2;
-}
-
-
-/* =========================
-   WISH CARD
-========================= */
-
-.wish-card {
-
-    width: 210px;
-
-    min-height: 230px;
-
-    background:
-        linear-gradient(
-        135deg,
-        #fffdf8,
-        #fff4df
-        );
-
-    color: #512f5d;
-
-    position: absolute;
-
-    left: -10px;
-
-    bottom: 45px;
-
-    padding: 22px 18px;
-
-    border-radius: 15px;
-
-    box-shadow:
-        0 15px 30px
-        rgba(0,0,0,0.25);
-
-    z-index: 2;
-
-    opacity: 0;
-
-    transform:
-        translateY(80px)
-        scale(0.75);
-
-    transition:
-
-        transform
-        1s
-        cubic-bezier(
-        .22,1,
-        .36,1
-        ),
-
-        opacity
-        0.5s ease;
-
-    pointer-events: none;
-}
-
-
-.wish-card h3 {
-
-    font-family: cursive;
-
-    font-size: 26px;
-
-    margin-bottom: 8px;
-
-    color: #b33f6d;
-}
-
-
-.card-heart {
-
-    font-size: 25px;
-
-    margin-bottom: 5px;
-}
-
-
-.card-line {
-
-    width: 80px;
-
-    height: 2px;
-
-    background: #e6a0b7;
-
-    margin:
-        10px auto
-        15px;
-}
-
-
-.wish-card p {
-
-    font-size: 14px;
-
-    line-height: 1.6;
-
-    margin-bottom: 12px;
-}
-
-
-.card-bottom {
-
-    font-size: 13px;
-
-    color: #b33f6d;
-
-    font-weight: bold;
-
-    margin-top: 10px;
-}
-
-
-/* =========================
-   OPEN GIFT ANIMATION
-========================= */
-
-.gift.open .gift-lid {
-
-    transform:
-
-        translateY(-75px)
-
-        rotate(-15deg)
-
-        scale(1.05);
-}
-
-
-.gift.open .wish-card {
-
-    opacity: 1;
-
-    transform:
-
-        translateY(-170px)
-
-        scale(1);
-}
-
-
-.gift.open {
-
-    animation:
-        giftCelebrate
-        0.7s ease;
-}
-
-
-@keyframes giftCelebrate {
-
-    0%,
-    100% {
-
-        transform:
-            scale(1);
-
-    }
-
-    50% {
-
-        transform:
-            scale(1.08);
-
-    }
-}
-
-
-/* =========================
-   GIFT LABEL
-========================= */
-
-.gift-label {
-
-    margin-top: 25px;
-
-    font-size: 17px;
-
-    font-weight: bold;
-
-    color: #6a3a6c;
-}
-
-
-/* =========================
-   FINAL MESSAGE
-========================= */
-
-.final-message {
-
-    max-width: 750px;
-
-    margin: auto;
-
-    padding: 50px 25px;
-
-    border-radius: 30px;
-
-    background:
-
-        linear-gradient(
-        135deg,
-        #6b3b8d,
-        #b14b83
-        );
-
-    color: white;
-
-    box-shadow:
-        0 15px 40px
-        rgba(0,0,0,0.18);
-}
-
-
-.final-stars {
-
-    font-size: 25px;
+    color: #783852;
 
     margin-bottom: 15px;
 }
 
+.final-message p {
+    font-size: 16px;
 
-.final-message h2 {
+    line-height: 1.7;
 
-    font-size:
-        clamp(30px,6vw,50px);
-
-    font-family: cursive;
-
-    margin-bottom: 20px;
+    color: #81556a;
 }
 
+.teacher-name {
+    margin-top: 20px;
 
-.final-message p {
+    font-size: 19px;
+    font-weight: bold;
+
+    color: #b44670;
+}
+
+.signature {
+    margin-top: 15px;
+
+    font-family: cursive;
 
     font-size: 18px;
 
-    line-height: 1.7;
+    color: #754158;
 }
 
 
-.signature {
-
-    margin-top: 25px;
-
-    font-size: 20px;
-
-    font-family: cursive;
-
-    color: #ffd6e7;
-}
-
-
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer {
+    padding: 25px;
 
     text-align: center;
 
-    padding: 25px;
-
-    background: #24145f;
+    background: #6d304b;
 
     color: white;
 
-    font-size: 15px;
+    font-size: 14px;
 }
 
 
-/* =========================
-   CONFETTI
-========================= */
+/* =====================================================
+   SCROLLBAR
+===================================================== */
 
-.confetti {
+.wish-card::-webkit-scrollbar {
+    width: 6px;
+}
 
-    position: fixed;
-
-    pointer-events: none;
-
-    z-index: 100;
-
-    animation:
-        confettiFall
-        2s ease-out forwards;
+.wish-card::-webkit-scrollbar-thumb {
+    background: #e5a0ba;
+    border-radius: 10px;
 }
 
 
-@keyframes confettiFall {
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes floating {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(8deg);
+    }
+}
+
+@keyframes floatIcon {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes bounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+@keyframes boxGlow {
 
     0% {
+        box-shadow:
+            0 15px 25px rgba(150, 50, 90, .25);
+    }
 
-        opacity: 1;
-
-        transform:
-            translateY(0)
-            rotate(0deg)
-            scale(1);
-
+    50% {
+        box-shadow:
+            0 5px 45px rgba(236, 87, 143, .55);
     }
 
     100% {
+        box-shadow:
+            0 15px 25px rgba(150, 50, 90, .25);
+    }
+}
 
-        opacity: 0;
+@keyframes heartBeat {
 
-        transform:
-            translateY(150px)
-            rotate(360deg)
-            scale(0.3);
+    0%, 100% {
+        transform: scale(1);
+    }
 
+    50% {
+        transform: scale(1.15);
     }
 }
 
 
-/* =========================
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .gifts-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 70px 20px;
+    }
+
+}
+
+
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media (max-width: 600px) {
 
-    .hero {
-
-        min-height: 100vh;
-
-        padding:
-            80px 15px
-            50px;
+    .hero-content {
+        padding-top: 60px;
     }
-
-
-    .hero-icon {
-
-        font-size: 50px;
-    }
-
 
     .hero h1 {
-
-        font-size: 55px;
+        font-size: 48px;
     }
-
 
     .quote {
-
-        font-size: 18px;
-
-        padding:
-            0 10px;
-    }
-
-
-    .books {
-
-        font-size: 50px;
-    }
-
-
-    .pencils {
-
-        font-size: 35px;
-    }
-
-
-    .thank-button {
-
-        padding:
-            14px 22px;
-
-        font-size: 15px;
-    }
-
-
-    .surprise-section {
-
-        padding:
-            70px 15px;
-    }
-
-
-    .section-heading {
-
-        margin-bottom: 70px;
-    }
-
-
-    .gifts-container {
-
-        gap: 130px;
-
-        padding-bottom: 100px;
-    }
-
-
-    .gift-wrapper {
-
-        min-height: 330px;
-    }
-
-
-    .final-message {
-
-        padding:
-            40px 20px;
-    }
-
-
-    .stars span {
-
         font-size: 16px;
     }
 
-}
+    .gifts-container {
+        grid-template-columns: 1fr;
 
+        gap: 75px;
+    }
 
-/* =========================
-   REDUCE MOTION
-========================= */
+    .gift-wrapper {
+        max-width: 300px;
+    }
 
-@media (prefers-reduced-motion: reduce) {
+    .gift {
+        width: 220px;
+        height: 190px;
+    }
 
-    *,
-    *::before,
-    *::after {
+    .wish-card {
+        width: 275px;
+        max-height: 450px;
+    }
 
-        animation-duration:
-            0.01ms !important;
+    .wish-card p {
+        font-size: 14px;
+    }
 
-        transition-duration:
-            0.01ms !important;
+    .section-heading {
+        margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .final-message {
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
 }
