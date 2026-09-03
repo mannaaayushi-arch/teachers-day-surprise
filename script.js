@@ -1,297 +1,249 @@
-let openedGifts = [];
+/* =====================================================
+   TEACHER'S DAY GIFT BOX SCRIPT
+===================================================== */
 
+
+/* =====================================================
+   OPEN / CLOSE GIFT
+===================================================== */
 
 function openGift(number) {
 
-    const gift =
-        document.querySelector(
-            ".gift" + number
-        );
+    const gift = document.querySelector(".gift" + number);
 
-
-    // If already opened,
-    // don't repeat everything
-
-    if (
-        gift.classList.contains("open")
-    ) {
+    if (!gift) {
         return;
     }
 
+    /*
+       If another box is already open,
+       close it first.
+    */
 
-    // Open selected gift
+    document.querySelectorAll(".gift.open").forEach(function (otherGift) {
 
-    gift.classList.add("open");
-
-
-    // Save opened gift
-
-    openedGifts.push(number);
-
-
-    // Celebration
-
-    createConfetti(gift);
-
-
-    // Check if all gifts opened
-
-    if (
-        openedGifts.length === 3
-    ) {
-
-        setTimeout(() => {
-
-            showFinalCelebration();
-
-        }, 1200);
-
-    }
-
-}
-
-
-
-/* =========================
-   CREATE CONFETTI
-========================= */
-
-function createConfetti(gift) {
-
-    const symbols = [
-
-        "✨",
-        "🌸",
-        "⭐",
-        "💖",
-        "🎉"
-
-    ];
-
-
-    const rect =
-        gift.getBoundingClientRect();
-
-
-    // Only 18 particles
-    // for smooth mobile performance
-
-    for (
-        let i = 0;
-        i < 18;
-        i++
-    ) {
-
-        const confetti =
-            document.createElement("div");
-
-
-        confetti.className =
-            "confetti";
-
-
-        confetti.innerHTML =
-            symbols[
-                Math.floor(
-                    Math.random()
-                    *
-                    symbols.length
-                )
-            ];
-
-
-        confetti.style.left =
-            (
-                rect.left
-                +
-                Math.random()
-                *
-                rect.width
-            )
-            +
-            "px";
-
-
-        confetti.style.top =
-            (
-                rect.top
-                +
-                Math.random()
-                *
-                80
-            )
-            +
-            "px";
-
-
-        confetti.style.fontSize =
-            (
-                Math.random()
-                *
-                15
-                +
-                15
-            )
-            +
-            "px";
-
-
-        confetti.style.animationDuration =
-            (
-                Math.random()
-                *
-                0.8
-                +
-                1.4
-            )
-            +
-            "s";
-
-
-        document.body.appendChild(
-            confetti
-        );
-
-
-        setTimeout(() => {
-
-            confetti.remove();
-
-        }, 2500);
-
-    }
-
-}
-
-
-
-/* =========================
-   FINAL CELEBRATION
-========================= */
-
-function showFinalCelebration() {
-
-    const finalMessage =
-        document.querySelector(
-            ".final-message"
-        );
-
-
-    // Scroll to final message
-
-    finalMessage.scrollIntoView({
-
-        behavior: "smooth",
-
-        block: "center"
+        if (otherGift !== gift) {
+            otherGift.classList.remove("open");
+        }
 
     });
 
 
-    // Extra celebration
+    /*
+       Open / close the selected gift.
+    */
 
-    setTimeout(() => {
-
-        createFinalConfetti();
-
-    }, 500);
-
-}
+    gift.classList.toggle("open");
 
 
+    /*
+       When opening a gift, create little
+       floating hearts and flowers.
+    */
 
-/* =========================
-   FINAL CONFETTI
-========================= */
+    if (gift.classList.contains("open")) {
 
-function createFinalConfetti() {
-
-    const symbols = [
-
-        "🎉",
-        "✨",
-        "🌸",
-        "💖",
-        "⭐"
-
-    ];
-
-
-    for (
-        let i = 0;
-        i < 30;
-        i++
-    ) {
-
-        const confetti =
-            document.createElement("div");
-
-
-        confetti.className =
-            "confetti";
-
-
-        confetti.innerHTML =
-            symbols[
-                Math.floor(
-                    Math.random()
-                    *
-                    symbols.length
-                )
-            ];
-
-
-        confetti.style.left =
-            Math.random()
-            *
-            window.innerWidth
-            +
-            "px";
-
-
-        confetti.style.top =
-            Math.random()
-            *
-            200
-            +
-            "px";
-
-
-        confetti.style.fontSize =
-            (
-                Math.random()
-                *
-                20
-                +
-                15
-            )
-            +
-            "px";
-
-
-        confetti.style.animationDuration =
-            (
-                Math.random()
-                *
-                1
-                +
-                1.5
-            )
-            +
-            "s";
-
-
-        document.body.appendChild(
-            confetti
-        );
-
-
-        setTimeout(() => {
-
-            confetti.remove();
-
-        }, 3000);
+        createCelebration(gift);
 
     }
 
 }
+
+
+/* =====================================================
+   KEYBOARD SUPPORT
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const gifts = document.querySelectorAll(".gift");
+
+    gifts.forEach(function (gift) {
+
+        gift.addEventListener("keydown", function (event) {
+
+            if (event.key === "Enter" || event.key === " ") {
+
+                event.preventDefault();
+
+                const number = getGiftNumber(gift);
+
+                if (number) {
+                    openGift(number);
+                }
+
+            }
+
+        });
+
+    });
+
+});
+
+
+/* =====================================================
+   GET GIFT NUMBER
+===================================================== */
+
+function getGiftNumber(gift) {
+
+    const numberElement =
+        gift.querySelector(".gift-number");
+
+    if (!numberElement) {
+        return null;
+    }
+
+    return parseInt(
+        numberElement.textContent.trim()
+    );
+
+}
+
+
+/* =====================================================
+   FLOATING CELEBRATION
+===================================================== */
+
+function createCelebration(gift) {
+
+    const symbols = [
+        "❤️",
+        "💖",
+        "💕",
+        "🌸",
+        "✨",
+        "🌷",
+        "💗",
+        "⭐"
+    ];
+
+
+    for (let i = 0; i < 8; i++) {
+
+        const item = document.createElement("span");
+
+        item.textContent =
+            symbols[
+                Math.floor(
+                    Math.random() * symbols.length
+                )
+            ];
+
+
+        item.style.position = "fixed";
+
+        item.style.left =
+            (window.innerWidth / 2 +
+            (Math.random() * 180 - 90)) + "px";
+
+        item.style.top =
+            (window.innerHeight / 2 +
+            (Math.random() * 100 - 50)) + "px";
+
+
+        item.style.fontSize =
+            (14 + Math.random() * 15) + "px";
+
+        item.style.pointerEvents = "none";
+
+        item.style.zIndex = "9999";
+
+
+        item.style.transition =
+            "transform 1.5s ease, opacity 1.5s ease";
+
+
+        document.body.appendChild(item);
+
+
+        /*
+           Start animation on next frame.
+        */
+
+        requestAnimationFrame(function () {
+
+            const x =
+                Math.random() * 200 - 100;
+
+            const y =
+                -80 - Math.random() * 180;
+
+            item.style.transform =
+                `translate(${x}px, ${y}px) rotate(${Math.random() * 180 - 90}deg)`;
+
+            item.style.opacity = "0";
+
+        });
+
+
+        /*
+           Remove after animation.
+        */
+
+        setTimeout(function () {
+
+            item.remove();
+
+        }, 1600);
+
+    }
+
+}
+
+
+/* =====================================================
+   CLOSE OPEN GIFT WHEN CLICKING OUTSIDE
+===================================================== */
+
+document.addEventListener("click", function (event) {
+
+    const clickedGift =
+        event.target.closest(".gift");
+
+    if (clickedGift) {
+        return;
+    }
+
+
+    /*
+       Don't close when clicking inside
+       the wish card itself.
+    */
+
+    const clickedCard =
+        event.target.closest(".wish-card");
+
+    if (clickedCard) {
+        return;
+    }
+
+
+    document.querySelectorAll(".gift.open")
+        .forEach(function (gift) {
+
+            gift.classList.remove("open");
+
+        });
+
+});
+
+
+/* =====================================================
+   ESC KEY CLOSES GIFT
+===================================================== */
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+
+        document.querySelectorAll(".gift.open")
+            .forEach(function (gift) {
+
+                gift.classList.remove("open");
+
+            });
+
+    }
+
+});
