@@ -681,41 +681,14 @@ body {
 
 
 /* =====================================================
-   MILI BOX
+   MILI & ANWESHA
+   SAME STYLE AS ALL OTHER BOXES
 ===================================================== */
 
-.mili-box .gift-box {
-    background:
-        linear-gradient(
-            135deg,
-            #ff9acb,
-            #ff5fa2
-        );
-}
-
-.mili-box .gift-lid {
-    background:
-        linear-gradient(
-            135deg,
-            #ffb6d9,
-            #ff79b5
-        );
-}
-
-.mili-icon {
-    font-size: 42px;
-    margin-bottom: 8px;
-
-    animation: heartBeat 1.5s infinite;
-}
-
-.mili-box {
-    border: 5px solid #d85a91;
-}
-
-.gift10 {
-    border: 5px solid #d85a91;
-}
+/* No special border.
+   No special box color.
+   No heart animation.
+   They use the normal .gift-box and .gift-lid styles above. */
 
 
 /* =====================================================
