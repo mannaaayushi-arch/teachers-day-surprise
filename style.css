@@ -710,7 +710,13 @@ body {
     animation: heartBeat 1.5s infinite;
 }
 
+.mili-box {
+    border: 5px solid #d85a91;
+}
 
+.gift10 {
+    border: 5px solid #d85a91;
+}
 /* =====================================================
    GIFT LABEL
 ===================================================== */
